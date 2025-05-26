@@ -1,12 +1,11 @@
-import sys
-import string
+#import sys
+#import string
 from tokens import *
 
 ESCAPE_CHARS = "nrt\\'\""
 
 line = 1
 tokens = []
-lastTk = None
 
 def err(msg, *args):
     raise Exception(msg % args)
@@ -38,7 +37,6 @@ class Token:
     def __init__(self, code, line):
         self.code = code
         self.line = line
-        self.next = None
         self.text = None
         self.i = None
         self.d = None
@@ -46,21 +44,16 @@ class Token:
 
     
 def addTk(code):
-    global tokens, lastTk, line
+    global tokens, line
     tk = Token(code, line)
-
-    if lastTk is not None:
-        lastTk.next = tk
-    else: 
-        tokens.clear()
-
-    lastTk = tk
     tokens.append(tk)
     return tk
 
 
 def tokenize(pch):
-    global line
+    global tokens, line
+    tokens = []
+    line = 1
     i = 0
     length = len(pch)
     while True:
