@@ -1,3 +1,16 @@
+# Symbol kinds
+SK_VAR = 'SK_VAR'
+SK_FN = 'SK_FN'
+SK_PARAM = 'SK_PARAM'
+SK_STRUCT = 'SK_STRUCT'
+
+# Type bases
+TB_INT = 'TB_INT'
+TB_DOUBLE = 'TB_DOUBLE'
+TB_CHAR = 'TB_CHAR'
+TB_STRUCT = 'TB_STRUCT'
+TB_VOID = 'TB_VOID'
+
 ID = 0
 TYPE_INT = 1
 TYPE_CHAR = 2

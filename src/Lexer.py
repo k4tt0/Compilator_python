@@ -1,5 +1,3 @@
-#import sys
-#import string
 from tokens import *
 
 ESCAPE_CHARS = "nrt\\'\""
@@ -268,7 +266,7 @@ def tokenize(pch):
                     i += 2
                 elif pch[i] == '\\' and (i+1 >= length or pch[i+1] not in ESCAPE_CHARS):
                     text = pch[start-1:i+2]
-                    err("Invalid string const on line %d: %s\nBAd escape char", line. text)
+                    err("Invalid string const on line %d: %s\nBAd escape char", line, text)
                 else:
                     i += 1
             if i < length and pch[i] == '"':
