@@ -1,8 +1,11 @@
-from ad import Type
+from an import Type
 
 class Ret:
     def __init__(self, typ=None, lval=False, ct=False):
-        self.type = typ if typ else Type()
+        if typ is None:
+            self.type = Type()
+        else:
+            self.type = typ
         self.lval = lval
         self.ct = ct
 

@@ -1,6 +1,6 @@
 from tokens import *
 from Lexer import Token
-from ad import (
+from an import (
     Type, symTable, findSymbolInDomain, addSymbolToDomain, newSymbol,
     pushDomain, dropDomain, symbolsLen, addSymbolToList, dupSymbol, typeSize, findSymbol)
 from at import Ret, canBeScalar, convTo, arithTypeTo, findSymbolInList
@@ -588,6 +588,8 @@ class Parser:
             if not s:
                 self.tkerr("Undefined symbol: %s", tkName.text)
             r.type = s.type
+            if r.type is None:
+                r.type = Type()
             r.lval = False
             r.ct = True
             return True
