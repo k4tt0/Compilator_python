@@ -27,5 +27,3 @@ void main()
 
 tokens = tokenize(source_code)
 show_tokens(tokens, stream=None)  # stream=None prints to stdoutimport sys
-import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))

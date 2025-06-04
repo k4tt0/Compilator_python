@@ -1,0 +1,396 @@
+Test debug output
+
+--- Test: 0.c ---
+Return code: 1
+STDOUT: Python path: ['d:\\Compilator\\Compilator_python\\src', 'C:\\Users\\Iarina\\AppData\\Local\\Temp', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\python313.zip', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\DLLs', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32\\lib', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\Pythonwin', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages']
+Current directory: D:\Compilator\Compilator_python
+Successfully imported all modules
+Parser Error: Error at line 5: Missing semicolon after variable declaration
+FAIL: Error at line 5: Missing semicolon after variable declaration
+
+STDERR: Traceback (most recent call last):
+  File "C:\Users\Iarina\AppData\Local\Temp\tmpgm232d6_.py", line 63, in <module>
+    parser.parse()
+    ~~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 59, in parse
+    if not self.unit():
+           ~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 67, in unit
+    elif self.fnDef():
+         ~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 198, in fnDef
+    if self.stmCompound(False):
+       ~~~~~~~~~~~~~~~~^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 297, in stmCompound
+    while self.varDef() or self.stm():
+          ~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 133, in varDef
+    self.tkerr("Missing semicolon after variable declaration")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 48, in tkerr
+    raise ParserError(error_msg)
+parser.ParserError: Error at line 5: Missing semicolon after variable declaration
+
+
+--- Test: 0.c ---
+Return code: 1
+STDOUT: Python path: ['d:\\Compilator\\Compilator_python\\src', 'C:\\Users\\Iarina\\AppData\\Local\\Temp', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\python313.zip', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\DLLs', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32\\lib', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\Pythonwin', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages']
+Current directory: D:\Compilator\Compilator_python
+Successfully imported all modules
+Parser Error: Error at line 5: Missing semicolon after variable declaration
+FAIL: Error at line 5: Missing semicolon after variable declaration
+
+STDERR: Traceback (most recent call last):
+  File "C:\Users\Iarina\AppData\Local\Temp\tmp3hffq6xg.py", line 63, in <module>
+    parser.parse()
+    ~~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 59, in parse
+    if not self.unit():
+           ~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 67, in unit
+    elif self.fnDef():
+         ~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 198, in fnDef
+    if self.stmCompound(False):
+       ~~~~~~~~~~~~~~~~^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 297, in stmCompound
+    while self.varDef() or self.stm():
+          ~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 133, in varDef
+    self.tkerr("Missing semicolon after variable declaration")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 48, in tkerr
+    raise ParserError(error_msg)
+parser.ParserError: Error at line 5: Missing semicolon after variable declaration
+
+
+--- Test: 1.c ---
+Return code: 1
+STDOUT: Python path: ['d:\\Compilator\\Compilator_python\\src', 'C:\\Users\\Iarina\\AppData\\Local\\Temp', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\python313.zip', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\DLLs', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32\\lib', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\Pythonwin', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages']
+Current directory: D:\Compilator\Compilator_python
+Successfully imported all modules
+Parser Error: Error at line 5: Missing/invalid argument in function call
+FAIL: Error at line 5: Missing/invalid argument in function call
+
+STDERR: Traceback (most recent call last):
+  File "C:\Users\Iarina\AppData\Local\Temp\tmpajtw51vm.py", line 50, in <module>
+    parser.parse()
+    ~~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 59, in parse
+    if not self.unit():
+           ~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 67, in unit
+    elif self.fnDef():
+         ~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 198, in fnDef
+    if self.stmCompound(False):
+       ~~~~~~~~~~~~~~~~^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 297, in stmCompound
+    while self.varDef() or self.stm():
+                           ~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 284, in stm
+    if self.expr(r):
+       ~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 308, in expr
+    return self.exprAssign(r)
+           ~~~~~~~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 313, in exprAssign
+    if self.exprUnary(rDst):
+       ~~~~~~~~~~~~~~^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 470, in exprUnary
+    return self.exprPostfix(r)
+           ~~~~~~~~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 473, in exprPostfix
+    if self.exprPrimary(r):
+       ~~~~~~~~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 531, in exprPrimary
+    self.tkerr("Missing/invalid argument in function call")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 48, in tkerr
+    raise ParserError(error_msg)
+parser.ParserError: Error at line 5: Missing/invalid argument in function call
+
+
+--- Test: 2.c ---
+Return code: 1
+STDOUT: Python path: ['d:\\Compilator\\Compilator_python\\src', 'C:\\Users\\Iarina\\AppData\\Local\\Temp', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\python313.zip', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\DLLs', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32\\lib', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\Pythonwin', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages']
+Current directory: D:\Compilator\Compilator_python
+Successfully imported all modules
+Parser Error: Error at line 6: Missing/invalid argument in function call
+FAIL: Error at line 6: Missing/invalid argument in function call
+
+STDERR: Traceback (most recent call last):
+  File "C:\Users\Iarina\AppData\Local\Temp\tmp6q9z08ik.py", line 52, in <module>
+    parser.parse()
+    ~~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 59, in parse
+    if not self.unit():
+           ~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 67, in unit
+    elif self.fnDef():
+         ~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 198, in fnDef
+    if self.stmCompound(False):
+       ~~~~~~~~~~~~~~~~^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 297, in stmCompound
+    while self.varDef() or self.stm():
+                           ~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 284, in stm
+    if self.expr(r):
+       ~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 308, in expr
+    return self.exprAssign(r)
+           ~~~~~~~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 313, in exprAssign
+    if self.exprUnary(rDst):
+       ~~~~~~~~~~~~~~^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 470, in exprUnary
+    return self.exprPostfix(r)
+           ~~~~~~~~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 473, in exprPostfix
+    if self.exprPrimary(r):
+       ~~~~~~~~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 531, in exprPrimary
+    self.tkerr("Missing/invalid argument in function call")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 48, in tkerr
+    raise ParserError(error_msg)
+parser.ParserError: Error at line 6: Missing/invalid argument in function call
+
+
+--- Test: 3.c ---
+Return code: 1
+STDOUT: Python path: ['d:\\Compilator\\Compilator_python\\src', 'C:\\Users\\Iarina\\AppData\\Local\\Temp', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\python313.zip', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\DLLs', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32\\lib', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\Pythonwin', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages']
+Current directory: D:\Compilator\Compilator_python
+Successfully imported all modules
+Parser Error: Error at line 5: Missing/invalid argument in function call
+FAIL: Error at line 5: Missing/invalid argument in function call
+
+STDERR: Traceback (most recent call last):
+  File "C:\Users\Iarina\AppData\Local\Temp\tmprvd8sx34.py", line 52, in <module>
+    parser.parse()
+    ~~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 59, in parse
+    if not self.unit():
+           ~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 67, in unit
+    elif self.fnDef():
+         ~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 198, in fnDef
+    if self.stmCompound(False):
+       ~~~~~~~~~~~~~~~~^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 297, in stmCompound
+    while self.varDef() or self.stm():
+                           ~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 284, in stm
+    if self.expr(r):
+       ~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 308, in expr
+    return self.exprAssign(r)
+           ~~~~~~~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 313, in exprAssign
+    if self.exprUnary(rDst):
+       ~~~~~~~~~~~~~~^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 470, in exprUnary
+    return self.exprPostfix(r)
+           ~~~~~~~~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 473, in exprPostfix
+    if self.exprPrimary(r):
+       ~~~~~~~~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 531, in exprPrimary
+    self.tkerr("Missing/invalid argument in function call")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 48, in tkerr
+    raise ParserError(error_msg)
+parser.ParserError: Error at line 5: Missing/invalid argument in function call
+
+
+--- Test: 4.c ---
+Return code: 1
+STDOUT: Python path: ['d:\\Compilator\\Compilator_python\\src', 'C:\\Users\\Iarina\\AppData\\Local\\Temp', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\python313.zip', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\DLLs', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32\\lib', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\Pythonwin', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages']
+Current directory: D:\Compilator\Compilator_python
+Successfully imported all modules
+Parser Error: Error at line 11: Missing/invalid argument in function call
+FAIL: Error at line 11: Missing/invalid argument in function call
+
+STDERR: Traceback (most recent call last):
+  File "C:\Users\Iarina\AppData\Local\Temp\tmpqvfr6q_w.py", line 57, in <module>
+    parser.parse()
+    ~~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 59, in parse
+    if not self.unit():
+           ~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 67, in unit
+    elif self.fnDef():
+         ~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 198, in fnDef
+    if self.stmCompound(False):
+       ~~~~~~~~~~~~~~~~^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 297, in stmCompound
+    while self.varDef() or self.stm():
+                           ~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 284, in stm
+    if self.expr(r):
+       ~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 308, in expr
+    return self.exprAssign(r)
+           ~~~~~~~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 313, in exprAssign
+    if self.exprUnary(rDst):
+       ~~~~~~~~~~~~~~^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 470, in exprUnary
+    return self.exprPostfix(r)
+           ~~~~~~~~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 473, in exprPostfix
+    if self.exprPrimary(r):
+       ~~~~~~~~~~~~~~~~^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 531, in exprPrimary
+    self.tkerr("Missing/invalid argument in function call")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 48, in tkerr
+    raise ParserError(error_msg)
+parser.ParserError: Error at line 11: Missing/invalid argument in function call
+
+
+--- Test: 5.c ---
+Return code: 1
+STDOUT: Python path: ['d:\\Compilator\\Compilator_python\\src', 'C:\\Users\\Iarina\\AppData\\Local\\Temp', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\python313.zip', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\DLLs', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32\\lib', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\Pythonwin', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages']
+Current directory: D:\Compilator\Compilator_python
+Successfully imported all modules
+Parser Error: Error at line 5: Missing semicolon after variable declaration
+FAIL: Error at line 5: Missing semicolon after variable declaration
+
+STDERR: Traceback (most recent call last):
+  File "C:\Users\Iarina\AppData\Local\Temp\tmpra1qvgu_.py", line 58, in <module>
+    parser.parse()
+    ~~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 59, in parse
+    if not self.unit():
+           ~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 67, in unit
+    elif self.fnDef():
+         ~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 198, in fnDef
+    if self.stmCompound(False):
+       ~~~~~~~~~~~~~~~~^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 297, in stmCompound
+    while self.varDef() or self.stm():
+          ~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 133, in varDef
+    self.tkerr("Missing semicolon after variable declaration")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 48, in tkerr
+    raise ParserError(error_msg)
+parser.ParserError: Error at line 5: Missing semicolon after variable declaration
+
+
+--- Test: 6.c ---
+Return code: 1
+STDOUT: Python path: ['d:\\Compilator\\Compilator_python\\src', 'C:\\Users\\Iarina\\AppData\\Local\\Temp', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\python313.zip', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\DLLs', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32\\lib', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\Pythonwin', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages']
+Current directory: D:\Compilator\Compilator_python
+Successfully imported all modules
+Parser Error: Error at line 5: Missing semicolon after variable declaration
+FAIL: Error at line 5: Missing semicolon after variable declaration
+
+STDERR: Traceback (most recent call last):
+  File "C:\Users\Iarina\AppData\Local\Temp\tmpu3zjcp8p.py", line 64, in <module>
+    parser.parse()
+    ~~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 59, in parse
+    if not self.unit():
+           ~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 67, in unit
+    elif self.fnDef():
+         ~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 198, in fnDef
+    if self.stmCompound(False):
+       ~~~~~~~~~~~~~~~~^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 297, in stmCompound
+    while self.varDef() or self.stm():
+          ~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 133, in varDef
+    self.tkerr("Missing semicolon after variable declaration")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 48, in tkerr
+    raise ParserError(error_msg)
+parser.ParserError: Error at line 5: Missing semicolon after variable declaration
+
+
+--- Test: 7.c ---
+Return code: 1
+STDOUT: Python path: ['d:\\Compilator\\Compilator_python\\src', 'C:\\Users\\Iarina\\AppData\\Local\\Temp', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\python313.zip', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\DLLs', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32\\lib', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\Pythonwin', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages']
+Current directory: D:\Compilator\Compilator_python
+Successfully imported all modules
+Parser Error: Error at line 5: Missing semicolon after variable declaration
+FAIL: Error at line 5: Missing semicolon after variable declaration
+
+STDERR: Traceback (most recent call last):
+  File "C:\Users\Iarina\AppData\Local\Temp\tmp_ma18e9d.py", line 56, in <module>
+    parser.parse()
+    ~~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 59, in parse
+    if not self.unit():
+           ~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 67, in unit
+    elif self.fnDef():
+         ~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 198, in fnDef
+    if self.stmCompound(False):
+       ~~~~~~~~~~~~~~~~^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 297, in stmCompound
+    while self.varDef() or self.stm():
+          ~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 133, in varDef
+    self.tkerr("Missing semicolon after variable declaration")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 48, in tkerr
+    raise ParserError(error_msg)
+parser.ParserError: Error at line 5: Missing semicolon after variable declaration
+
+
+--- Test: 8.c ---
+Return code: 1
+STDOUT: Python path: ['d:\\Compilator\\Compilator_python\\src', 'C:\\Users\\Iarina\\AppData\\Local\\Temp', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\python313.zip', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\DLLs', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32\\lib', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\Pythonwin', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages']
+Current directory: D:\Compilator\Compilator_python
+Successfully imported all modules
+FAIL: Invalid character constant on line 14: '\');
+
+STDERR: Traceback (most recent call last):
+  File "C:\Users\Iarina\AppData\Local\Temp\tmps76o_e4_.py", line 56, in <module>
+    tokens = tokenize(code)
+  File "d:\Compilator\Compilator_python\src\Lexer.py", line 299, in tokenize
+    err("Invalid character constant on line %d: %s", line, text)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Compilator\Compilator_python\src\Lexer.py", line 9, in err
+    raise Exception(msg % args)
+Exception: Invalid character constant on line 14: '\');
+
+
+--- Test: 9.c ---
+Return code: 1
+STDOUT: Python path: ['d:\\Compilator\\Compilator_python\\src', 'C:\\Users\\Iarina\\AppData\\Local\\Temp', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\python313.zip', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\DLLs', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32\\lib', 'C:\\Users\\Iarina\\AppData\\Roaming\\Python\\Python313\\site-packages\\Pythonwin', 'C:\\Users\\Iarina\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages']
+Current directory: D:\Compilator\Compilator_python
+Successfully imported all modules
+Parser Error: Error at line 4: Missing semicolon after variable declaration
+FAIL: Error at line 4: Missing semicolon after variable declaration
+
+STDERR: Traceback (most recent call last):
+  File "C:\Users\Iarina\AppData\Local\Temp\tmpi5htftc9.py", line 64, in <module>
+    parser.parse()
+    ~~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 59, in parse
+    if not self.unit():
+           ~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 65, in unit
+    if self.structDef():
+       ~~~~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 91, in structDef
+    while self.varDef():
+          ~~~~~~~~~~~^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 133, in varDef
+    self.tkerr("Missing semicolon after variable declaration")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Compilator\Compilator_python\src\parser.py", line 48, in tkerr
+    raise ParserError(error_msg)
+parser.ParserError: Error at line 4: Missing semicolon after variable declaration
+

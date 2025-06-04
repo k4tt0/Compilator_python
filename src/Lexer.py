@@ -33,12 +33,12 @@ def parse_escape_chars(input_str):
 
 class Token:
     def __init__(self, code, line):
-        self.code = code
-        self.line = line
-        self.text = None
-        self.i = None
-        self.d = None
-        self.c = None
+        self.code:int = code
+        self.line:int = line
+        self.text:str = ""
+        self.i:int = 0
+        self.d:float = 0
+        self.c:str = ""
 
     
 def addTk(code):
@@ -104,12 +104,31 @@ def tokenize(pch):
                 addTk(DOT)
                 i += 1
             else: 
-                err("Invalid operator on line %d: '%c' (ASCII: %d)\nExpected and identif before n after DOT operator", line, ch, ord(ch))
+                err("Invalid operator on line %d: '%c' (ASCII: %d)\nExpected an identifier after DOT operator", line, ch, ord(ch))
         elif ch == '/':
             if i+1 < length and pch[i+1] == '/':
                 i += 2
                 while i < length and pch[i] not in '\r\n\0':
                     i += 1
+            elif i+1 < length and pch[i+1] == '*':
+                i += 2
+                comment_line = line
+                while i+1 < length:
+                    if pch[i] == '*' and pch[i+1] == '/':
+                        i += 2
+                        break
+                    elif pch[i] == '\n':
+                        line += 1
+                        i += 1
+                    elif pch[i] == '\r':
+                        if i+1 < length and pch[i+1] == '\n':
+                            i += 1
+                        line += 1
+                        i += 1
+                    else:
+                        i += 1
+                else:
+                    err("Unterminated comment starting at line %d", comment_line)
             else: 
                 addTk(DIV)
                 i += 1
@@ -195,42 +214,64 @@ def tokenize(pch):
                 tk = addTk(ID)
                 tk.text = text
             
-        #numbers
-        elif ch.isdigit():
+        #numbers (hex, octal, decimal, double)
+        elif ch.isdigit() or (ch == '0' and i+1 < length and pch[i+1].lower() == 'x'):
             start = i
-            i += 1
-            while i < length and pch[i].isdigit():
-                i += 1
-            if i < length and (pch[i] == '.' or pch[i] in 'eE'):
-                num_digits = 0
-                if i < length and pch[i] == '.':
+            # Hexadecimal
+            if ch == '0' and i+1 < length and pch[i+1].lower() == 'x':
+                i += 2  # Skip '0x'
+                hex_start = i
+                while i < length and (pch[i].isdigit() or pch[i].lower() in 'abcdef'):
                     i += 1
-                    frac_start = i
-                    while i < length and pch[i].isdigit():
-                        i += 1
-                        num_digits += 1
-                    if num_digits == 0 and (i >= length or pch[i].lower() != 'e'):
-                        text = pch[start:i]
-                        err("invald double constant on line %d: %s", line, text)
-                if i < length and pch[i] in 'eE':
-                    i+= 1
-                    if i < length and pch[i] in '+-':
-                        i += 1
-                    num_digits = 0
-                    exp_start = i
-                    while i < length and pch[i].isdigit():
-                        i += 1
-                        num_digits += 1
-                    if num_digits == 0:
-                        text = pch[start:i]
-                        err("Invalid double constatnt on line %d: %s", line, text)
-                text = pch[start:i]
-                tk = addTk(DOUBLE)
-                tk.d = float(text)
-            else:
+                if i == hex_start:
+                    text = pch[start:i]
+                    err("Invalid hexadecimal constant on line %d: %s", line, text)
                 text = pch[start:i]
                 tk = addTk(INT)
-                tk.i = int(text)
+                tk.i = int(text, 16)
+            else:
+                # Decimal or octal
+                i += 1
+                while i < length and pch[i].isdigit():
+                    i += 1
+                # Double
+                if i < length and (pch[i] == '.' or pch[i] in 'eE'):
+                    num_digits = 0
+                    if i < length and pch[i] == '.':
+                        i += 1
+                        frac_start = i
+                        while i < length and pch[i].isdigit():
+                            i += 1
+                            num_digits += 1
+                        if num_digits == 0 and (i >= length or pch[i].lower() != 'e'):
+                            text = pch[start:i]
+                            err("invald double constant on line %d: %s", line, text)
+                    if i < length and pch[i] in 'eE':
+                        i+= 1
+                        if i < length and pch[i] in '+-':
+                            i += 1
+                        num_digits = 0
+                        exp_start = i
+                        while i < length and pch[i].isdigit():
+                            i += 1
+                            num_digits += 1
+                        if num_digits == 0:
+                            text = pch[start:i]
+                            err("Invalid double constatnt on line %d: %s", line, text)
+                    text = pch[start:i]
+                    tk = addTk(DOUBLE)
+                    tk.d = float(text)
+                else:
+                    text = pch[start:i]
+                    tk = addTk(INT)
+                    # Octal
+                    if text.startswith('0') and len(text) > 1:
+                        for c in text[1:]:
+                            if not ('0' <= c <= '7'):
+                                err("Invalid octal constant on line %d: %s", line, text)
+                        tk.i = int(text, 8)
+                    else:
+                        tk.i = int(text)
         
         #char constant
         elif ch == "'":
@@ -266,7 +307,7 @@ def tokenize(pch):
                     i += 2
                 elif pch[i] == '\\' and (i+1 >= length or pch[i+1] not in ESCAPE_CHARS):
                     text = pch[start-1:i+2]
-                    err("Invalid string const on line %d: %s\nBAd escape char", line, text)
+                    err("Invalid string const on line %d: %s\nBad escape char", line, text)
                 else:
                     i += 1
             if i < length and pch[i] == '"':
@@ -306,3 +347,9 @@ def show_tokens(tokens, stream):
 
 def free_tokens(tokens):
     tokens.clear()
+
+def done():
+    """Free all dynamically allocated memory"""
+    global tokens
+    free_tokens(tokens)
+    tokens = []
